@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global University Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1><i class="fas fa-graduation-cap"></i> Global University Search</h1>
+                <p class="subtitle">Discover higher education institutions around the world</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="input-group">
+                            <label for="country-select"><i class="fas fa-globe"></i> Select Country:</label>
+                            <select id="country-select" class="form-control">
+                                <option value="" disabled selected>Choose a country...</option>
+                                <!-- Countries will be loaded dynamically -->
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="university-name"><i class="fas fa-university"></i> University Name (optional):</label>
+                            <input type="text" id="university-name" class="form-control" placeholder="Enter university name...">
+                        </div>
+                        
+                        <button id="search-btn" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Search Universities
+                        </button>
+                    </div>
+                    
+                    <div class="search-info">
+                        <p><i class="fas fa-info-circle"></i> Select a country to find universities. You can optionally filter by name.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div class="results-header">
+                    <h2><i class="fas fa-list-ul"></i> Search Results</h2>
+                    <div class="results-meta">
+                        <span id="results-count">0</span> universities found
+                        <button id="export-csv" class="btn btn-secondary" disabled>
+                            <i class="fas fa-file-csv"></i> Export to CSV
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="results-container">
+                    <div class="loading-spinner" id="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>Loading universities...</p>
+                    </div>
+                    
+                    <div class="no-results" id="no-results">
+                        <i class="fas fa-book-open"></i>
+                        <p>No universities found. Try a different search.</p>
+                    </div>
+                    
+                    <div class="error-message" id="error-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p id="error-text">An error occurred while fetching data.</p>
+                        <button class="btn btn-secondary" id="retry-btn">Retry</button>
+                    </div>
+                    
+                    <div class="university-list" id="university-list">
+                        <!-- University cards will be inserted here -->
+                    </div>
+                    
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination controls will be inserted here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>Global University Search helps you find higher education institutions worldwide using data from the Universities API.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Search by country</li>
+                        <li>Filter by university name</li>
+                        <li>Export results to CSV</li>
+                        <li>Responsive design</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>For questions or suggestions, please contact us at <a href="mailto:info@universitysearch.example">info@universitysearch.example</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Global University Search. All rights reserved.</p>
+                <p class="api-credit">Data provided by <a href="http://universities.hipolabs.com" target="_blank">Universities API</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- University Details Modal -->
+    <div class="modal" id="university-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-university-name"></h2>
+            <div class="modal-body">
+                <div class="modal-row">
+                    <div class="modal-col">
+                        <p><strong>Country:</strong> <span id="modal-country"></span></p>
+                        <p><strong>Country Code:</strong> <span id="modal-country-code"></span></p>
+                        <p><strong>State/Province:</strong> <span id="modal-state"></span></p>
+                    </div>
+                    <div class="modal-col">
+                        <p><strong>Domains:</strong></p>
+                        <ul id="modal-domains"></ul>
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="modal-col">
+                        <p><strong>Website(s):</strong></p>
+                        <ul id="modal-websites"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</body>
+</html>

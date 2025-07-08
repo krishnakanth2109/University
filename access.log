@@ -1,0 +1,6 @@
+::1 - - [08/Jul/2025:11:22:56 +0000] "GET / HTTP/1.1" 200 7082 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+::1 - - [08/Jul/2025:11:22:57 +0000] "GET /style.css HTTP/1.1" 200 10505 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+::1 - - [08/Jul/2025:11:22:57 +0000] "GET /script.js HTTP/1.1" 200 13315 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+::1 - - [08/Jul/2025:11:22:57 +0000] "GET /favicon.ico HTTP/1.1" 200 7082 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+::1 - - [08/Jul/2025:11:23:07 +0000] "GET /api/countries HTTP/1.1" 200 2685 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+::1 - - [08/Jul/2025:11:23:23 +0000] "GET /api/universities?country=India HTTP/1.1" 200 84760 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
